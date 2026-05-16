@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg:        #09090d;
+  --surf1:     #111118;
+  --surf2:     #18181f;
+  --surf3:     #20202a;
+  --border:    #2a2a36;
+  --border2:   #36364a;
+  --text:      #e6e3da;
+  --text2:     #9e9b90;
+  --text3:     #58564e;
+  --gold:      #c8a44a;
+  --gold2:     #e8c870;
+  --gold-bg:   #1e1608;
+  --blue:      #4a7fc8;
+  --blue2:     #6a9fe8;
+  --blue-bg:   #080d1e;
+  --purple:    #8a4ac8;
+  --purple-bg: #120818;
+  --green:     #4ab88a;
+  --green-bg:  #071812;
+  --xbox:      #107c10;
+  --xbox2:     #44b044;
+  --xbox-bg:   #061206;
+  --ps:        #0070d1;
+  --ps2:       #2090f1;
+  --ps-bg:     #020c18;
+  --red:       #c84a4a;
+  --red-bg:    #1e0808;
+  --radius:    8px;
+  --radius2:   12px;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Film grain overlay */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyBAMAAADsEZWCAAAAGFBMVEUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAmCsypAAAACHRSTlMAERkiKjM7Q91X7wAAADlJREFUKM9jYBgFpAEGBgYWBgYGFgYGBhYGBgYWBgYWBgYGFgYGBhYGBgYWBgYGFgYGBhYGBgYA3CAKC0zz73AAAAAASUVORK5CYII=");
+  opacity: 0.025;
+  pointer-events: none;
+  z-index: 9999;
+}
+
+/* ============ HEADER ============ */
+.site-header {
+  background: linear-gradient(180deg, #0d0d14 0%, var(--bg) 100%);
+  border-bottom: 1px solid var(--border);
+  padding: 28px 32px 20px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.header-title { display: flex; flex-direction: column; gap: 4px; }
+
+.header-eyebrow {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.25em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+.header-title h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(28px, 4vw, 42px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text);
+  line-height: 1;
+}
+
+.header-title h1 span {
+  color: var(--gold);
+}
+
+.header-stats {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.stat {
+  text-align: center;
+}
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1;
+  display: block;
+}
+.stat-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  color: var(--text3);
+  text-transform: uppercase;
+  margin-top: 4px;
+  display: block;
+}
+
+/* ============ TOOLBAR ============ */
+.toolbar {
+  background: var(--surf1);
+  border-bottom: 1px solid var(--border);
+  padding: 12px 32px;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.search-wrap {
+  position: relative;
+  flex: 1;
+  min-width: 180px;
+  max-width: 320px;
+}
+
+.search-wrap svg {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text3);
+  pointer-events: none;
+}
+
+.search-wrap input {
+  width: 100%;
+  padding: 8px 12px 8px 34px;
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+}
+.search-wrap input:focus { border-color: var(--gold); }
+.search-wrap input::placeholder { color: var(--text3); }
+
+.tb-filters { display: flex; gap: 8px; flex-wrap: wrap; }
+
+select {
+  padding: 7px 10px;
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  outline: none;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+select:focus, select:hover { border-color: var(--border2); }
+
+.tb-right { display: flex; gap: 8px; align-items: center; margin-left: auto; }
+
+.view-toggle {
+  display: flex;
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+.view-btn {
+  padding: 7px 11px;
+  background: none;
+  border: none;
+  color: var(--text3);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+}
+.view-btn.active { background: var(--surf3); color: var(--gold); }
+.view-btn:hover:not(.active) { color: var(--text2); }
+
+.btn {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  border: 1px solid transparent;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.btn-add {
+  background: var(--gold);
+  color: #0a0800;
+  font-weight: 600;
+}
+.btn-add:hover { background: var(--gold2); }
+
+.btn-secondary {
+  background: var(--surf2);
+  border-color: var(--border);
+  color: var(--text2);
+}
+.btn-secondary:hover { border-color: var(--border2); color: var(--text); }
+
+/* ============ RESULTS BAR ============ */
+.results-bar {
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--border);
+}
+.results-count {
+  font-family: 'DM Mono', monospace;
+  font-size: 11px;
+  color: var(--text3);
+  letter-spacing: 0.05em;
+}
+.results-count span { color: var(--text2); }
+
+/* ============ MAIN CONTENT ============ */
+.main { padding: 24px 32px 60px; }
+
+/* ============ GRID VIEW ============ */
+.items-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  background: var(--surf1);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  transition: border-color 0.15s, transform 0.15s;
+  animation: fadeIn 0.2s ease;
+  position: relative;
+  overflow: hidden;
+}
+.card:hover {
+  border-color: var(--border2);
+  transform: translateY(-1px);
+}
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 100%;
+  background: var(--type-color, var(--gold));
+  border-radius: 3px 0 0 3px;
+}
+
+.card-top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.card-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.3;
+  flex: 1;
+}
+
+.card-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.icon-btn {
+  width: 28px; height: 28px;
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  color: var(--text3);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.icon-btn:hover { border-color: var(--border2); color: var(--text); background: var(--surf2); }
+.icon-btn.del:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
+
+.card-meta { display: flex; flex-wrap: wrap; gap: 6px; align-items: center; }
+
+.badge {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  padding: 3px 7px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+/* Type badges */
+.badge-type { border: 1px solid; }
+.type-4k    { color: var(--gold);   border-color: #3a2e10; background: var(--gold-bg); --type-color: var(--gold); }
+.type-blu   { color: var(--blue2);  border-color: #0e1c3a; background: var(--blue-bg); --type-color: var(--blue); }
+.type-3d    { color: #c07aff;       border-color: #1e0e3a; background: var(--purple-bg); --type-color: var(--purple); }
+.type-dig   { color: var(--green);  border-color: #0e2e20; background: var(--green-bg); --type-color: var(--green); }
+.type-xbo1  { color: var(--xbox2);  border-color: #0e2a0e; background: var(--xbox-bg);  --type-color: var(--xbox); }
+.type-xbo360 { color: #88d040;      border-color: #1a2e0a; background: #0a1006; --type-color: #88d040; }
+.type-ps4   { color: var(--ps2);    border-color: #060e24; background: var(--ps-bg); --type-color: var(--ps); }
+.type-ps3   { color: #609af0;       border-color: #080e22; background: #020812; --type-color: #609af0; }
+.type-pc    { color: #40c4f0;       border-color: #082030; background: #020c18; --type-color: #40c4f0; }
+
+.badge-cond { background: var(--surf3); color: var(--text2); border: 1px solid var(--border); }
+.badge-keep { background: #071810; color: #40b870; border: 1px solid #0e2e18; }
+.badge-sell { background: #180708; color: #c84a4a; border: 1px solid #2e0e0e; }
+.badge-notsure { background: var(--surf3); color: var(--text2); border: 1px solid var(--border); }
+.badge-wantbuy { background: #06100e; color: #40a0c0; border: 1px solid #0e2030; }
+
+.badge-steel { background: #0e0e1e; color: #8090e0; border: 1px solid #1e2050; }
+.badge-dup   { background: var(--red-bg); color: var(--red); border: 1px solid #2e1010; }
+
+.card-franchise {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  letter-spacing: 0.05em;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.card-genres { display: flex; flex-wrap: wrap; gap: 4px; }
+.genre-tag {
+  font-size: 10px;
+  color: var(--text3);
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  padding: 1px 6px;
+  border-radius: 3px;
+}
+
+.card-notes {
+  font-size: 11px;
+  color: var(--text3);
+  font-style: italic;
+  border-top: 1px solid var(--border);
+  padding-top: 8px;
+  margin-top: 2px;
+}
+
+.card-watched {
+  font-family: 'DM Mono', monospace;
+  font-size: 10px;
+  color: var(--text3);
+  margin-top: auto;
+}
+
+/* ============ LIST VIEW ============ */
+.items-list { display: none; }
+.view-list .items-grid { display: none; }
+.view-list .items-list { display: block; }
+
+.list-table {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  overflow: hidden;
+}
+
+.list-table th {
+  background: var(--surf2);
+  text-align: left;
+  padding: 10px 12px;
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+  border-bottom: 1px solid var(--border);
+  cursor: pointer;
+  user-select: none;
+  white-space: nowrap;
+}
+.list-table th:hover { color: var(--text2); }
+.list-table th.sort-asc::after { content: ' ↑'; color: var(--gold); }
+.list-table th.sort-desc::after { content: ' ↓'; color: var(--gold); }
+
+.list-table tr { animation: fadeIn 0.2s ease; }
+.list-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+  font-size: 13px;
+}
+.list-table tbody tr:last-child td { border-bottom: none; }
+.list-table tbody tr:hover td { background: var(--surf1); }
+
+.list-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.list-franchise { color: var(--text3); font-size: 11px; font-family: 'DM Mono', monospace; margin-top: 2px; }
+.list-genres { display: flex; flex-wrap: wrap; gap: 3px; max-width: 200px; }
+
+.list-actions { display: flex; gap: 4px; white-space: nowrap; }
+
+/* ============ EMPTY STATE ============ */
+.empty {
+  text-align: center;
+  padding: 80px 20px;
+  color: var(--text3);
+}
+.empty h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: var(--text2);
+  margin-bottom: 8px;
+}
+.empty p { font-size: 14px; margin-bottom: 20px; }
+
+/* ============ MODAL ============ */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+  background: var(--surf1);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius2);
+  width: 100%;
+  max-width: 640px;
+  max-height: 90vh;
+  overflow-y: auto;
+  transform: scale(0.95);
+  transition: transform 0.2s;
+}
+.modal-overlay.open .modal { transform: scale(1); }
+
+.modal-header {
+  padding: 20px 24px 16px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+}
+.modal-close {
+  width: 32px; height: 32px;
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  color: var(--text2);
+  cursor: pointer;
+  display: flex; align-items: center; justify-content: center;
+  transition: all 0.15s;
+}
+.modal-close:hover { border-color: var(--red); color: var(--red); background: var(--red-bg); }
+
+.modal-body { padding: 20px 24px; }
+
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+.form-full { grid-column: 1 / -1; }
+
+.form-group { display: flex; flex-direction: column; gap: 5px; }
+.form-label {
+  font-family: 'DM Mono', monospace;
+  font-size: 9px;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--text3);
+}
+.form-input {
+  padding: 9px 11px;
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.15s;
+  width: 100%;
+}
+.form-input:focus { border-color: var(--gold); }
+.form-input::placeholder { color: var(--text3); }
+
+.form-check-row {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.form-check {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 13px;
+  color: var(--text2);
+}
+.form-check input[type=checkbox] {
+  width: 16px; height: 16px;
+  accent-color: var(--gold);
+  cursor: pointer;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--border);
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-save {
+  background: var(--gold);
+  color: #0a0800;
+  font-weight: 600;
+  padding: 9px 20px;
+  border-radius: var(--radius);
+  border: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.btn-save:hover { background: var(--gold2); }
+
+.btn-cancel {
+  background: var(--surf2);
+  border: 1px solid var(--border);
+  color: var(--text2);
+  padding: 9px 20px;
+  border-radius: var(--radius);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+.btn-cancel:hover { border-color: var(--border2); color: var(--text); }
+
+/* ============ TOAST ============ */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background: var(--surf3);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius);
+  padding: 12px 18px;
+  font-size: 13px;
+  color: var(--text);
+  z-index: 2000;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.25s;
+  pointer-events: none;
+}
+.toast.show { opacity: 1; transform: translateY(0); }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Scrollbar */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border2); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--text3); }
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 640px) {
+  .site-header { padding: 20px 16px 16px; flex-direction: column; align-items: flex-start; }
+  .header-stats { gap: 16px; }
+  .toolbar { padding: 10px 16px; }
+  .main { padding: 16px 16px 40px; }
+  .results-bar { padding: 8px 16px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .stat-num { font-size: 22px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER ===== -->
+<header class="site-header">
+  <div class="header-title">
+    <span class="header-eyebrow">Personal Media Vault</span>
+    <h1>The <span>Collection</span></h1>
+  </div>
+  <div class="header-stats" id="stats"></div>
+</header>
+
+<!-- ===== TOOLBAR ===== -->
+<nav class="toolbar">
+  <div class="search-wrap">
+    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+    </svg>
+    <input type="text" id="search" placeholder="Search titles, genres, directors…" autocomplete="off">
+  </div>
+
+  <div class="tb-filters">
+    <select id="filterType">
+      <option value="">All Types</option>
+      <option>4K UHD</option>
+      <option>Blu-ray</option>
+      <option>Blu-ray 3D</option>
+      <option>Digital</option>
+      <option>Xbox One</option>
+      <option>Xbox 360</option>
+      <option>PlayStation 4</option>
+      <option>PlayStation 3</option>
+      <option>PC</option>
+    </select>
+    <select id="filterGenre">
+      <option value="">All Genres</option>
+    </select>
+    <select id="filterKeepSell">
+      <option value="">All Status</option>
+      <option>Keep</option>
+      <option>Sell</option>
+      <option>Not Sure</option>
+      <option>Want to Buy</option>
+    </select>
+    <select id="filterCondition">
+      <option value="">All Conditions</option>
+      <option>Sealed</option>
+      <option>Excellent</option>
+      <option>Good</option>
+      <option>Standard</option>
+    </select>
+    <select id="sortBy">
+      <option value="name-asc">Name A–Z</option>
+      <option value="name-desc">Name Z–A</option>
+      <option value="type-asc">Type</option>
+      <option value="franchise-asc">Franchise/Director</option>
+    </select>
+  </div>
+
+  <div class="tb-right">
+    <div class="view-toggle">
+      <button class="view-btn active" id="btnGrid" title="Grid view" onclick="setView('grid')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+          <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/>
+        </svg>
+      </button>
+      <button class="view-btn" id="btnList" title="List view" onclick="setView('list')">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/>
+          <line x1="8" y1="18" x2="21" y2="18"/>
+          <line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/>
+          <line x1="3" y1="18" x2="3.01" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <button class="btn btn-add" onclick="openModal()">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+        <line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/>
+      </svg>
+      Add Item
+    </button>
+    <button class="btn btn-secondary" onclick="exportData()" title="Export JSON">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+      </svg>
+      Export
+    </button>
+    <button class="btn btn-secondary" onclick="document.getElementById('importFile').click()" title="Import JSON">
+      <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+        <polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/>
+      </svg>
+      Import
+    </button>
+    <input type="file" id="importFile" accept=".json" style="display:none" onchange="importData(event)">
+  </div>
+</nav>
+
+<!-- ===== RESULTS BAR ===== -->
+<div class="results-bar">
+  <div class="results-count" id="resultsCount"></div>
+</div>
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="main" id="mainContainer">
+  <div class="items-grid" id="itemsGrid"></div>
+  <div class="items-list" id="itemsList"></div>
+</main>
+
+<!-- ===== MODAL ===== -->
+<div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
+  <div class="modal">
+    <div class="modal-header">
+      <h2 id="modalTitle">Add Item</h2>
+      <button class="modal-close" onclick="closeModal()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+        </svg>
+      </button>
+    </div>
+    <div class="modal-body">
+      <div class="form-grid">
+        <div class="form-group form-full">
+          <label class="form-label">Title *</label>
+          <input class="form-input" id="fName" placeholder="e.g. Blade Runner 2049" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Type *</label>
+          <select class="form-input" id="fType">
+            <option>4K UHD</option>
+            <option>Blu-ray</option>
+            <option>Blu-ray 3D</option>
+            <option>Digital</option>
+            <option>Xbox One</option>
+            <option>Xbox 360</option>
+            <option>PlayStation 4</option>
+            <option>PlayStation 3</option>
+            <option>PC</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Franchise / Director</label>
+          <input class="form-input" id="fFranchise" placeholder="e.g. Denis Villeneuve">
+        </div>
+        <div class="form-group form-full">
+          <label class="form-label">Genres (comma-separated)</label>
+          <input class="form-input" id="fGenres" placeholder="e.g. Sci-Fi, Drama, Thriller">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Condition</label>
+          <select class="form-input" id="fCondition">
+            <option>Excellent</option>
+            <option>Good</option>
+            <option>Standard</option>
+            <option>Sealed</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Watched / Played?</label>
+          <select class="form-input" id="fWatched">
+            <option>Yes</option>
+            <option>More than Once</option>
+            <option>No</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Keep or Sell?</label>
+          <select class="form-input" id="fKeepSell">
+            <option>Keep</option>
+            <option>Sell</option>
+            <option>Not Sure</option>
+            <option>Want to Buy</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Notes</label>
+          <input class="form-input" id="fNotes" placeholder="Any notes…">
+        </div>
+        <div class="form-group form-full">
+          <label class="form-label">Flags</label>
+          <div class="form-check-row">
+            <label class="form-check">
+              <input type="checkbox" id="fSteelbook"> Steelbook
+            </label>
+            <label class="form-check">
+              <input type="checkbox" id="fSlipcase"> Slipcase / J-Card
+            </label>
+            <label class="form-check">
+              <input type="checkbox" id="fDuplicate"> Duplicate
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <button class="btn-cancel" onclick="closeModal()">Cancel</button>
+      <button class="btn-save" onclick="saveItem()">Save Item</button>
+    </div>
+  </div>
+</div>
+
+<!-- ===== TOAST ===== -->
+<div class="toast" id="toast"></div>
+
+<script>
+// ============================================================
+//  DATA
+// ============================================================
+function uid() {
+  return Date.now().toString(36) + Math.random().toString(36).slice(2, 7);
+}
+
+const DEFAULT_DATA = [
+  // ── FILMS ──────────────────────────────────────────────────
+  {id:uid(),name:"12 Years a Slave",type:"4K UHD",franchise:"Steve McQueen",genres:["Drama","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"127 Hours",type:"Blu-ray",franchise:"Danny Boyle",genres:["Adventure","Drama","Survival"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"2 Guns",type:"Blu-ray",franchise:"",genres:["Action","Comedy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"2001: A Space Odyssey",type:"4K UHD",franchise:"Stanley Kubrick",genres:["Drama","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"A Star is Born",type:"Blu-ray",franchise:"",genres:["Drama","Musical","Romance"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Ad Astra",type:"4K UHD",franchise:"",genres:["Drama","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Aliens",type:"Blu-ray",franchise:"James Cameron",genres:["Action","Horror","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"American Psycho",type:"Blu-ray",franchise:"",genres:["Drama","Horror","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Apollo 11",type:"4K UHD",franchise:"",genres:["Documentary","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Argo (Extended Cut)",type:"Blu-ray",franchise:"Ben Affleck",genres:["Drama","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Arrival",type:"4K UHD",franchise:"Denis Villeneuve",genres:["Drama","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Australia",type:"Blu-ray",franchise:"Baz Luhrmann",genres:["Drama","Romance"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Avatar: The Way of Water",type:"4K UHD",franchise:"James Cameron",genres:["Action","Adventure","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Band of Brothers",type:"Blu-ray",franchise:"Steven Spielberg",genres:["Drama","War"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"TV Miniseries"},
+  {id:uid(),name:"Batman v Superman: Dawn of Justice (Ultimate Edition)",type:"4K UHD",franchise:"Zack Snyder",genres:["Action","Comic Book","DCEU"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:true,slipcase:false,notes:"IMAX cut"},
+  {id:uid(),name:"Battle: Los Angeles",type:"Blu-ray",franchise:"",genres:["Action","Sci-Fi","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Blade Runner",type:"Blu-ray",franchise:"Ridley Scott",genres:["Drama","Neo-Noir","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Blade Runner 2049",type:"4K UHD",franchise:"Denis Villeneuve",genres:["Drama","Neo-Noir","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Bohemian Rhapsody",type:"4K UHD",franchise:"",genres:["Biographical","Drama","Musical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Braveheart",type:"4K UHD",franchise:"Mel Gibson",genres:["Drama","Historical","War"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Casino Royale",type:"4K UHD",franchise:"Bond",genres:["Action","Spy","Thriller"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Deadpool 2 (Super Duper Cut)",type:"4K UHD",franchise:"",genres:["Action","Comedy","Comic Book"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Defiance",type:"Blu-ray",franchise:"",genres:["Drama","Historical","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Daniel Craig"},
+  {id:uid(),name:"Del Toro's Pinocchio",type:"4K UHD",franchise:"Guillermo del Toro",genres:["Animation","Drama","Fantasy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Dune",type:"4K UHD",franchise:"Denis Villeneuve",genres:["Drama","Epic","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:true,slipcase:false,notes:""},
+  {id:uid(),name:"Dune Part Two",type:"4K UHD",franchise:"Denis Villeneuve",genres:["Drama","Epic","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:true,slipcase:false,notes:""},
+  {id:uid(),name:"Dunkirk",type:"4K UHD",franchise:"Christopher Nolan",genres:["Drama","Historical","War"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Evil Dead",type:"Blu-ray",franchise:"",genres:["Horror"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Exodus: Gods and Kings",type:"4K UHD",franchise:"Ridley Scott",genres:["Drama","Epic","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Fifty Shades (Trilogy)",type:"Blu-ray",franchise:"",genres:["Drama","Romance"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"First Man",type:"4K UHD",franchise:"Damien Chazelle",genres:["Drama","Historical","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Frieda",type:"Blu-ray",franchise:"",genres:["Drama","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Studiocanal"},
+  {id:uid(),name:"Frozen",type:"Blu-ray",franchise:"",genres:["Animation","Family","Musical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Gladiator",type:"4K UHD",franchise:"Ridley Scott",genres:["Action","Drama","Epic","Historical"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Godzilla vs. Kong",type:"4K UHD",franchise:"Godzilla / Kong",genres:["Action","Kaiju","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Gone Girl",type:"4K UHD",franchise:"David Fincher",genres:["Drama","Mystery","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Gravity",type:"Blu-ray",franchise:"",genres:["Drama","Sci-Fi","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Hacksaw Ridge",type:"4K UHD",franchise:"Mel Gibson",genres:["Drama","Historical","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Hachi: A Dog's Tale",type:"Blu-ray",franchise:"",genres:["Drama","Family"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Immortals",type:"Blu-ray",franchise:"",genres:["Action","Epic","Fantasy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Inception",type:"4K UHD",franchise:"Christopher Nolan",genres:["Action","Sci-Fi","Thriller"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Inglourious Basterds",type:"4K UHD",franchise:"Quentin Tarantino",genres:["Drama","War"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Interstellar",type:"4K UHD",franchise:"Christopher Nolan",genres:["Drama","Epic","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Invictus",type:"Blu-ray",franchise:"Clint Eastwood",genres:["Drama","Historical","Sport"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"It's a Wonderful Life",type:"Blu-ray",franchise:"",genres:["Christmas","Classics","Drama","Romance"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Jackie Brown",type:"Blu-ray",franchise:"Quentin Tarantino",genres:["Comedy","Crime","Drama"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"John Wick",type:"4K UHD",franchise:"John Wick",genres:["Action","Thriller"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Kill Bill Vol. 1 & 2",type:"Blu-ray",franchise:"Quentin Tarantino",genres:["Action","Crime"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"La Vie En Rose",type:"Blu-ray",franchise:"",genres:["Biographical","Drama","Musical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Law Abiding Citizen",type:"Blu-ray",franchise:"",genres:["Drama","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Lawrence of Arabia",type:"Blu-ray",franchise:"David Lean",genres:["Drama","Epic","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Studiocanal"},
+  {id:uid(),name:"Legend",type:"Blu-ray",franchise:"",genres:["Crime","Drama"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Tom Hardy"},
+  {id:uid(),name:"Legend of the Guardians: The Owls of Ga'hoole",type:"Blu-ray",franchise:"",genres:["Animation","Adventure","Family","Fantasy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Les Misérables",type:"Blu-ray",franchise:"",genres:["Drama","Musical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Live Die Repeat: Edge of Tomorrow",type:"4K UHD",franchise:"",genres:["Action","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Logan",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Drama"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Love Never Die",type:"Blu-ray",franchise:"Andrew Lloyd Webber",genres:["Musical","Romance"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Malcolm X",type:"Blu-ray",franchise:"",genres:["Biographical","Drama","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Maleficent",type:"Blu-ray",franchise:"",genres:["Family","Fantasy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Man from UNCLE",type:"Blu-ray",franchise:"Guy Ritchie",genres:["Action","Comedy","Spy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:true,notes:"Henry Cavill – Limited Edition"},
+  {id:uid(),name:"Mandela: Long Walk to Freedom",type:"Blu-ray",franchise:"",genres:["Biographical","Drama","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Mary Poppins Returns",type:"4K UHD",franchise:"",genres:["Family","Fantasy","Musical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Midway",type:"4K UHD",franchise:"",genres:["Action","Historical","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Milk",type:"Blu-ray",franchise:"",genres:["Biographical","Drama","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Miss Saigon",type:"Blu-ray",franchise:"",genres:["Drama","Musical","Romance"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Mission Impossible: Fallout",type:"4K UHD",franchise:"Mission Impossible",genres:["Action","Thriller"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Moon",type:"Blu-ray",franchise:"Duncan Jones",genres:["Drama","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Nightcrawler",type:"Blu-ray",franchise:"",genres:["Drama","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Jake Gyllenhaal"},
+  {id:uid(),name:"No Time to Die",type:"4K UHD",franchise:"Bond",genres:["Action","Spy","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Now You See Me",type:"Blu-ray",franchise:"",genres:["Action","Mystery","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Pacific Rim",type:"Blu-ray",franchise:"Guillermo del Toro",genres:["Action","Kaiju","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Planet Earth II",type:"4K UHD",franchise:"David Attenborough",genres:["Documentary","Nature"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Predestination",type:"Blu-ray",franchise:"",genres:["Sci-Fi","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Quantum of Solace",type:"4K UHD",franchise:"Bond",genres:["Action","Spy","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Rambo (Series)",type:"Blu-ray",franchise:"",genres:["Action","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Robin Hood",type:"Blu-ray",franchise:"Ridley Scott",genres:["Action","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Rogue One: A Star Wars Story",type:"4K UHD",franchise:"Star Wars",genres:["Action","Adventure","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Rush",type:"Blu-ray",franchise:"Ron Howard",genres:["Drama","Sport"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Salt",type:"Blu-ray",franchise:"",genres:["Action","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Schindler's List",type:"4K UHD",franchise:"Steven Spielberg",genres:["Drama","Historical","War"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Serenity",type:"Blu-ray",franchise:"Joss Whedon",genres:["Action","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Sherlock Holmes",type:"Blu-ray",franchise:"Guy Ritchie",genres:["Action","Mystery"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Sicario",type:"4K UHD",franchise:"Denis Villeneuve",genres:["Crime","Drama","Thriller"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Sicario: Day of the Soldado",type:"4K UHD",franchise:"",genres:["Crime","Drama","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Skyfall",type:"4K UHD",franchise:"Bond",genres:["Action","Spy","Thriller"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Skyscraper",type:"4K UHD",franchise:"",genres:["Action","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Source Code",type:"Blu-ray",franchise:"Duncan Jones",genres:["Sci-Fi","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Spears & Munsil HD Benchmark 2nd Edition",type:"Blu-ray",franchise:"",genres:["Benchmark"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Calibration disc"},
+  {id:uid(),name:"Spears & Munsil UHD HDR Benchmark",type:"4K UHD",franchise:"",genres:["Benchmark"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"1st Edition – Calibration disc"},
+  {id:uid(),name:"Spectre",type:"4K UHD",franchise:"Bond",genres:["Action","Spy","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Suicide Squad",type:"4K UHD",franchise:"DCEU",genres:["Action","Comic Book","DCEU"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Taxi Driver",type:"4K UHD",franchise:"Martin Scorsese",genres:["Crime","Drama","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Studiocanal"},
+  {id:uid(),name:"TeneT",type:"4K UHD",franchise:"Christopher Nolan",genres:["Action","Sci-Fi","Thriller"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"The Abyss",type:"4K UHD",franchise:"James Cameron",genres:["Adventure","Sci-Fi","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"The Bourne Series",type:"4K UHD",franchise:"The Bourne Series",genres:["Action","Thriller"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Identity, Supremacy, Ultimatum, Legacy"},
+  {id:uid(),name:"The Fifth Element",type:"4K UHD",franchise:"Luc Besson",genres:["Action","Comedy","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"The Greatest Showman",type:"4K UHD",franchise:"",genres:["Drama","Musical"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"The Guernsey Literary & Potato Peel Pie Society",type:"Blu-ray",franchise:"",genres:["Drama","Romance","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"The Hurt Locker",type:"Blu-ray",franchise:"Kathryn Bigelow",genres:["Drama","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"The King's Speech",type:"Blu-ray",franchise:"",genres:["Drama","Historical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"The Matrix (4-Film Collection)",type:"4K UHD",franchise:"",genres:["Action","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"The Professional (Léon)",type:"4K UHD",franchise:"Luc Besson",genres:["Action","Crime","Drama"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"THX 1138",type:"Blu-ray",franchise:"George Lucas",genres:["Dystopian","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Tinker Tailor Soldier Spy",type:"Blu-ray",franchise:"",genres:["Drama","Spy","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Top Gun & Top Gun: Maverick",type:"4K UHD",franchise:"",genres:["Action","Drama"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Tracks",type:"Blu-ray",franchise:"",genres:["Adventure","Drama"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Trainspotting",type:"Blu-ray",franchise:"Danny Boyle",genres:["Crime","Drama"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Transformers (Series)",type:"Blu-ray",franchise:"",genres:["Action","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"True Grit",type:"4K UHD",franchise:"Coen Brothers",genres:["Drama","Western"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"True Lies",type:"4K UHD",franchise:"James Cameron",genres:["Action","Comedy"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Vice",type:"Blu-ray",franchise:"",genres:["Biographical","Comedy","Drama"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Warrior",type:"Blu-ray",franchise:"",genres:["Drama","Sport"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Whiplash",type:"4K UHD",franchise:"Damien Chazelle",genres:["Drama","Music"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"X-Men: First Class",type:"Blu-ray",franchise:"Marvel",genres:["Action","Comic Book"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Zero Dark Thirty",type:"Blu-ray",franchise:"Kathryn Bigelow",genres:["Drama","Historical","Thriller","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Zodiac",type:"Blu-ray",franchise:"David Fincher",genres:["Crime","Drama","Mystery","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Zulu",type:"Blu-ray",franchise:"",genres:["Drama","Historical","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  // ── STAR WARS ──────────────────────────────────────────────
+  {id:uid(),name:"Star Wars: A New Hope",type:"4K UHD",franchise:"Star Wars",genres:["Action","Adventure","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Episode IV"},
+  {id:uid(),name:"Star Wars: The Empire Strikes Back",type:"4K UHD",franchise:"Star Wars",genres:["Action","Adventure","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Episode V"},
+  {id:uid(),name:"Star Wars: Return of the Jedi",type:"4K UHD",franchise:"Star Wars",genres:["Action","Adventure","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Episode VI"},
+  {id:uid(),name:"Star Wars: The Force Awakens",type:"4K UHD",franchise:"Star Wars",genres:["Action","Adventure","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Episode VII"},
+  {id:uid(),name:"Star Wars: The Last Jedi",type:"4K UHD",franchise:"Star Wars",genres:["Action","Adventure","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Episode VIII"},
+  {id:uid(),name:"Star Wars: The Rise of Skywalker",type:"4K UHD",franchise:"Star Wars",genres:["Action","Adventure","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Episode IX"},
+  // ── MCU ──────────────────────────────────────────────────
+  {id:uid(),name:"Iron Man",type:"4K UHD",franchise:"Marvel",genres:["Action","Comedy","Comic Book"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #01"},
+  {id:uid(),name:"The Incredible Hulk",type:"Blu-ray",franchise:"Marvel",genres:["Action","Comic Book"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #02"},
+  {id:uid(),name:"Thor",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Fantasy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #04"},
+  {id:uid(),name:"The Avengers",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #06"},
+  {id:uid(),name:"Thor: The Dark World",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Fantasy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #08"},
+  {id:uid(),name:"Ant-Man",type:"4K UHD",franchise:"Marvel",genres:["Action","Comedy","Comic Book"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #12"},
+  {id:uid(),name:"Captain America: Civil War",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Drama"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #13"},
+  {id:uid(),name:"Doctor Strange",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Fantasy"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #14"},
+  {id:uid(),name:"Guardians of the Galaxy Vol. 2",type:"4K UHD",franchise:"Marvel",genres:["Action","Comedy","Comic Book","Sci-Fi"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #15"},
+  {id:uid(),name:"Spider-Man: Homecoming",type:"4K UHD",franchise:"Marvel",genres:["Action","Comedy","Comic Book"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #16"},
+  {id:uid(),name:"Thor: Ragnarok",type:"4K UHD",franchise:"Marvel",genres:["Action","Comedy","Comic Book"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #17"},
+  {id:uid(),name:"Black Panther",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Drama"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #18"},
+  {id:uid(),name:"Avengers: Infinity War",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Drama"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #19"},
+  {id:uid(),name:"Ant-Man and the Wasp",type:"4K UHD",franchise:"Marvel",genres:["Action","Comedy","Comic Book"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #20"},
+  {id:uid(),name:"Avengers: Endgame",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Drama"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #22"},
+  {id:uid(),name:"Eternals",type:"4K UHD",franchise:"Marvel",genres:["Action","Comic Book","Drama","Sci-Fi"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"MCU #26"},
+  {id:uid(),name:"Wolverine Unleashed",type:"Blu-ray",franchise:"Marvel",genres:["Action","Comic Book","Drama"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  // ── GAMES – Xbox One ────────────────────────────────────────
+  {id:uid(),name:"Star Wars Battlefront II",type:"Xbox One",franchise:"Star Wars",genres:["Action","Shooter"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Bioshock (Collection)",type:"Xbox One",franchise:"",genres:["FPS","Horror","Shooter"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Call of Duty: Modern Warfare Remastered",type:"Xbox One",franchise:"Call of Duty",genres:["FPS","Shooter"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Call of Duty: Black Ops III",type:"Xbox One",franchise:"Call of Duty",genres:["FPS","Shooter"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Call of Duty: Ghosts",type:"Xbox One",franchise:"Call of Duty",genres:["FPS","Shooter"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Battlefield 4",type:"Xbox One",franchise:"Battlefield",genres:["FPS","Shooter","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Gears 5",type:"Xbox One",franchise:"Gears of War",genres:["Action","Shooter","TPS"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Gears of War 4",type:"Xbox One",franchise:"Gears of War",genres:["Action","Shooter","TPS"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Halo 5: Guardians",type:"Xbox One",franchise:"Halo",genres:["FPS","Sci-Fi","Shooter"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Halo: The Master Chief Collection",type:"Xbox One",franchise:"Halo",genres:["FPS","Sci-Fi","Shooter"],condition:"Excellent",watched:"More than Once",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:"Halo 1–4"},
+  {id:uid(),name:"Titanfall",type:"Xbox One",franchise:"",genres:["Action","FPS","Sci-Fi","Shooter"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  // ── GAMES – Xbox 360 ────────────────────────────────────────
+  {id:uid(),name:"Battlefield: Bad Company 2",type:"Xbox 360",franchise:"Battlefield",genres:["FPS","Shooter","War"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Burnout Paradise",type:"Xbox 360",franchise:"",genres:["Racing"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Rainbow Six Vegas",type:"Xbox 360",franchise:"Rainbow Six",genres:["FPS","Shooter","Tactical"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+  {id:uid(),name:"Splinter Cell: Conviction",type:"Xbox 360",franchise:"Splinter Cell",genres:["Action","Stealth","Thriller"],condition:"Excellent",watched:"Yes",keepSell:"Keep",duplicate:false,steelbook:false,slipcase:false,notes:""},
+];
+
+// ============================================================
+//  STATE
+// ============================================================
+let data = [];
+let editingId = null;
+let viewMode = 'grid';
+let currentSort = 'name-asc';
+let sortField = 'name', sortDir = 'asc';
+
+const STORE_KEY = 'the-collection-v1';
+
+function loadData() {
+  try {
+    const raw = localStorage.getItem(STORE_KEY);
+    if (raw) {
+      data = JSON.parse(raw);
+    } else {
+      data = DEFAULT_DATA;
+      saveData();
+    }
+  } catch(e) {
+    data = DEFAULT_DATA;
+  }
+}
+
+function saveData() {
+  localStorage.setItem(STORE_KEY, JSON.stringify(data));
+}
+
+// ============================================================
+//  TYPE BADGE CLASS
+// ============================================================
+function typeBadgeClass(type) {
+  const map = {
+    '4K UHD':        'type-4k',
+    'Blu-ray':       'type-blu',
+    'Blu-ray 3D':    'type-3d',
+    'Digital':       'type-dig',
+    'Xbox One':      'type-xbo1',
+    'Xbox 360':      'type-xbo360',
+    'PlayStation 4': 'type-ps4',
+    'PlayStation 3': 'type-ps3',
+    'PC':            'type-pc',
+  };
+  return map[type] || 'type-blu';
+}
+
+function keepBadgeClass(val) {
+  const map = { Keep:'badge-keep', Sell:'badge-sell', 'Not Sure':'badge-notsure', 'Want to Buy':'badge-wantbuy' };
+  return map[val] || 'badge-notsure';
+}
+
+// ============================================================
+//  FILTER + SORT
+// ============================================================
+function getFiltered() {
+  const q = document.getElementById('search').value.toLowerCase().trim();
+  const fType = document.getElementById('filterType').value;
+  const fGenre = document.getElementById('filterGenre').value;
+  const fKeepSell = document.getElementById('filterKeepSell').value;
+  const fCond = document.getElementById('filterCondition').value;
+
+  let items = data.filter(item => {
+    if (fType && item.type !== fType) return false;
+    if (fGenre && !item.genres.includes(fGenre)) return false;
+    if (fKeepSell && item.keepSell !== fKeepSell) return false;
+    if (fCond && item.condition !== fCond) return false;
+    if (q) {
+      const search = [item.name, item.franchise, ...(item.genres || []), item.notes].join(' ').toLowerCase();
+      if (!search.includes(q)) return false;
+    }
+    return true;
+  });
+
+  // Sort
+  items.sort((a, b) => {
+    let va = (a[sortField] || '').toString().toLowerCase();
+    let vb = (b[sortField] || '').toString().toLowerCase();
+    const r = va < vb ? -1 : va > vb ? 1 : 0;
+    return sortDir === 'asc' ? r : -r;
+  });
+
+  return items;
+}
+
+// ============================================================
+//  STATS
+// ============================================================
+function updateStats() {
+  const total = data.length;
+  const uhd = data.filter(d => d.type === '4K UHD').length;
+  const blu = data.filter(d => d.type === 'Blu-ray').length;
+  const blu3d = data.filter(d => d.type === 'Blu-ray 3D').length;
+  const games = data.filter(d => ['Xbox One','Xbox 360','PlayStation 4','PlayStation 3','PC'].includes(d.type)).length;
+  const digital = data.filter(d => d.type === 'Digital').length;
+
+  const el = document.getElementById('stats');
+  el.innerHTML = `
+    <div class="stat"><span class="stat-num">${total}</span><span class="stat-label">Total</span></div>
+    <div class="stat"><span class="stat-num">${uhd}</span><span class="stat-label">4K UHD</span></div>
+    <div class="stat"><span class="stat-num">${blu + blu3d}</span><span class="stat-label">Blu-ray${blu3d > 0 ? ` (${blu3d} 3D)` : ''}</span></div>
+    ${games > 0 ? `<div class="stat"><span class="stat-num">${games}</span><span class="stat-label">Games</span></div>` : ''}
+    ${digital > 0 ? `<div class="stat"><span class="stat-num">${digital}</span><span class="stat-label">Digital</span></div>` : ''}
+  `;
+}
+
+// ============================================================
+//  GENRE FILTER POPULATION
+// ============================================================
+function populateGenreFilter() {
+  const genres = new Set();
+  data.forEach(item => (item.genres || []).forEach(g => genres.add(g)));
+  const sel = document.getElementById('filterGenre');
+  const cur = sel.value;
+  sel.innerHTML = '<option value="">All Genres</option>' +
+    [...genres].sort().map(g => `<option${g===cur?' selected':''}>${g}</option>`).join('');
+}
+
+// ============================================================
+//  RENDER
+// ============================================================
+function render() {
+  updateStats();
+  populateGenreFilter();
+  const items = getFiltered();
+  document.getElementById('resultsCount').innerHTML =
+    `<span>${items.length}</span> of <span>${data.length}</span> items`;
+
+  renderGrid(items);
+  renderList(items);
+}
+
+function typeColor(type) {
+  const map = {
+    '4K UHD':'var(--gold)','Blu-ray':'var(--blue)','Blu-ray 3D':'var(--purple)',
+    'Digital':'var(--green)','Xbox One':'var(--xbox)','Xbox 360':'#88d040',
+    'PlayStation 4':'var(--ps)','PlayStation 3':'#6090f0','PC':'#40c4f0'
+  };
+  return map[type] || 'var(--gold)';
+}
+
+function renderGrid(items) {
+  const grid = document.getElementById('itemsGrid');
+  if (!items.length) {
+    grid.innerHTML = `<div class="empty" style="grid-column:1/-1">
+      <h2>Nothing here</h2><p>Try adjusting your search or filters.</p>
+    </div>`;
+    return;
+  }
+  grid.innerHTML = items.map(item => {
+    const tc = typeColor(item.type);
+    return `
+    <div class="card" style="--type-color:${tc}">
+      <div class="card-top">
+        <div class="card-name">${esc(item.name)}</div>
+        <div class="card-actions">
+          <button class="icon-btn" title="Edit" onclick="openModal('${item.id}')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+              <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+            </svg>
+          </button>
+          <button class="icon-btn del" title="Delete" onclick="deleteItem('${item.id}')">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="3 6 5 6 21 6"/>
+              <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+              <path d="M10 11v6"/><path d="M14 11v6"/>
+              <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div class="card-meta">
+        <span class="badge badge-type ${typeBadgeClass(item.type)}">${esc(item.type)}</span>
+        <span class="badge badge-cond">${esc(item.condition)}</span>
+        <span class="badge ${keepBadgeClass(item.keepSell)}">${esc(item.keepSell)}</span>
+        ${item.steelbook ? '<span class="badge badge-steel">Steelbook</span>' : ''}
+        ${item.slipcase  ? '<span class="badge badge-steel">Slipcase</span>' : ''}
+        ${item.duplicate ? '<span class="badge badge-dup">Duplicate</span>' : ''}
+      </div>
+      ${item.franchise ? `<div class="card-franchise">${esc(item.franchise)}</div>` : ''}
+      <div class="card-genres">${(item.genres||[]).map(g=>`<span class="genre-tag">${esc(g)}</span>`).join('')}</div>
+      ${item.notes ? `<div class="card-notes">${esc(item.notes)}</div>` : ''}
+      <div class="card-watched">
+        ${esc(item.watched === 'More than Once' ? '▶▶ Watched multiple times' :
+              item.watched === 'Yes' ? '▶ Watched / Played' : '○ Not yet watched')}
+      </div>
+    </div>`;
+  }).join('');
+}
+
+function renderList(items) {
+  const list = document.getElementById('itemsList');
+  if (!items.length) { list.innerHTML = ''; return; }
+  list.innerHTML = `
+    <table class="list-table">
+      <thead>
+        <tr>
+          <th onclick="sortTable('name')">Title</th>
+          <th onclick="sortTable('type')">Type</th>
+          <th onclick="sortTable('franchise')">Franchise / Director</th>
+          <th>Genres</th>
+          <th onclick="sortTable('condition')">Condition</th>
+          <th onclick="sortTable('keepSell')">Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        ${items.map(item => `
+          <tr>
+            <td>
+              <div class="list-name">${esc(item.name)}</div>
+              ${item.franchise ? `<div class="list-franchise">${esc(item.franchise)}</div>` : ''}
+            </td>
+            <td><span class="badge badge-type ${typeBadgeClass(item.type)}">${esc(item.type)}</span></td>
+            <td style="color:var(--text2);font-size:12px">${esc(item.franchise||'—')}</td>
+            <td>
+              <div class="list-genres">${(item.genres||[]).map(g=>`<span class="genre-tag">${esc(g)}</span>`).join('')}</div>
+            </td>
+            <td><span class="badge badge-cond">${esc(item.condition)}</span></td>
+            <td><span class="badge ${keepBadgeClass(item.keepSell)}">${esc(item.keepSell)}</span></td>
+            <td>
+              <div class="list-actions">
+                <button class="icon-btn" title="Edit" onclick="openModal('${item.id}')">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/>
+                    <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/>
+                  </svg>
+                </button>
+                <button class="icon-btn del" title="Delete" onclick="deleteItem('${item.id}')">
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polyline points="3 6 5 6 21 6"/>
+                    <path d="M19 6l-1 14a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2L5 6"/>
+                    <path d="M10 11v6"/><path d="M14 11v6"/>
+                    <path d="M9 6V4a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v2"/>
+                  </svg>
+                </button>
+              </div>
+            </td>
+          </tr>
+        `).join('')}
+      </tbody>
+    </table>`;
+}
+
+function sortTable(field) {
+  if (sortField === field) {
+    sortDir = sortDir === 'asc' ? 'desc' : 'asc';
+  } else {
+    sortField = field;
+    sortDir = 'asc';
+  }
+  render();
+}
+
+function esc(s) {
+  return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ============================================================
+//  VIEW TOGGLE
+// ============================================================
+function setView(mode) {
+  viewMode = mode;
+  const container = document.getElementById('mainContainer');
+  container.classList.toggle('view-list', mode === 'list');
+  document.getElementById('btnGrid').classList.toggle('active', mode === 'grid');
+  document.getElementById('btnList').classList.toggle('active', mode === 'list');
+  render();
+}
+
+// ============================================================
+//  MODAL
+// ============================================================
+function openModal(id) {
+  editingId = id || null;
+  const item = id ? data.find(d => d.id === id) : null;
+  document.getElementById('modalTitle').textContent = item ? 'Edit Item' : 'Add Item';
+
+  document.getElementById('fName').value        = item?.name || '';
+  document.getElementById('fType').value        = item?.type || '4K UHD';
+  document.getElementById('fFranchise').value   = item?.franchise || '';
+  document.getElementById('fGenres').value      = (item?.genres || []).join(', ');
+  document.getElementById('fCondition').value   = item?.condition || 'Excellent';
+  document.getElementById('fWatched').value     = item?.watched || 'Yes';
+  document.getElementById('fKeepSell').value    = item?.keepSell || 'Keep';
+  document.getElementById('fNotes').value       = item?.notes || '';
+  document.getElementById('fSteelbook').checked = item?.steelbook || false;
+  document.getElementById('fSlipcase').checked  = item?.slipcase || false;
+  document.getElementById('fDuplicate').checked = item?.duplicate || false;
+
+  document.getElementById('modalOverlay').classList.add('open');
+  setTimeout(() => document.getElementById('fName').focus(), 50);
+}
+
+function closeModal() {
+  document.getElementById('modalOverlay').classList.remove('open');
+  editingId = null;
+}
+
+function handleOverlayClick(e) {
+  if (e.target === document.getElementById('modalOverlay')) closeModal();
+}
+
+function saveItem() {
+  const name = document.getElementById('fName').value.trim();
+  if (!name) { document.getElementById('fName').focus(); return; }
+
+  const item = {
+    id:        editingId || uid(),
+    name,
+    type:      document.getElementById('fType').value,
+    franchise: document.getElementById('fFranchise').value.trim(),
+    genres:    document.getElementById('fGenres').value.split(',').map(g => g.trim()).filter(Boolean),
+    condition: document.getElementById('fCondition').value,
+    watched:   document.getElementById('fWatched').value,
+    keepSell:  document.getElementById('fKeepSell').value,
+    notes:     document.getElementById('fNotes').value.trim(),
+    steelbook: document.getElementById('fSteelbook').checked,
+    slipcase:  document.getElementById('fSlipcase').checked,
+    duplicate: document.getElementById('fDuplicate').checked,
+  };
+
+  if (editingId) {
+    const idx = data.findIndex(d => d.id === editingId);
+    if (idx !== -1) data[idx] = item;
+  } else {
+    data.push(item);
+  }
+
+  saveData();
+  closeModal();
+  render();
+  toast(editingId ? '✓ Item updated' : '✓ Item added');
+}
+
+// ============================================================
+//  DELETE
+// ============================================================
+function deleteItem(id) {
+  const item = data.find(d => d.id === id);
+  if (!item) return;
+  if (!confirm(`Delete "${item.name}"?`)) return;
+  data = data.filter(d => d.id !== id);
+  saveData();
+  render();
+  toast('Item deleted');
+}
+
+// ============================================================
+//  EXPORT / IMPORT
+// ============================================================
+function exportData() {
+  const json = JSON.stringify(data, null, 2);
+  const blob = new Blob([json], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `the-collection-${new Date().toISOString().slice(0,10)}.json`;
+  a.click();
+  URL.revokeObjectURL(url);
+  toast('✓ Collection exported');
+}
+
+function importData(event) {
+  const file = event.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    try {
+      const imported = JSON.parse(e.target.result);
+      if (!Array.isArray(imported)) throw new Error('Invalid format');
+      if (!confirm(`Import ${imported.length} items? This will REPLACE your current collection.`)) return;
+      data = imported;
+      saveData();
+      render();
+      toast(`✓ Imported ${imported.length} items`);
+    } catch(err) {
+      alert('Error reading file. Please make sure it\'s a valid collection JSON export.');
+    }
+  };
+  reader.readAsText(file);
+  event.target.value = '';
+}
+
+// ============================================================
+//  TOAST
+// ============================================================
+function toast(msg, duration = 2500) {
+  const el = document.getElementById('toast');
+  el.textContent = msg;
+  el.classList.add('show');
+  setTimeout(() => el.classList.remove('show'), duration);
+}
+
+// ============================================================
+//  SORT SELECT
+// ============================================================
+document.getElementById('sortBy').addEventListener('change', function() {
+  const [f, d] = this.value.split('-');
+  sortField = f; sortDir = d || 'asc';
+  render();
+});
+
+// ============================================================
+//  SEARCH + FILTERS
+// ============================================================
+document.getElementById('search').addEventListener('input', render);
+document.getElementById('filterType').addEventListener('change', render);
+document.getElementById('filterGenre').addEventListener('change', render);
+document.getElementById('filterKeepSell').addEventListener('change', render);
+document.getElementById('filterCondition').addEventListener('change', render);
+
+// Keyboard shortcut: Escape closes modal
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape') closeModal();
+  if ((e.ctrlKey || e.metaKey) && e.key === 'k') {
+    e.preventDefault();
+    document.getElementById('search').focus();
+  }
+});
+
+// ============================================================
+//  INIT
+// ============================================================
+loadData();
+render();
+</script>
+</body>
+</html>
