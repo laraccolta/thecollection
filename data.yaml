@@ -1,0 +1,2090 @@
+- name: '2001: A Space Odyssey'
+  type: 4K UHD
+  franchise: Stanley Kubrick
+  genres:
+  - Drama
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 12 Years a Slave
+  type: 4K UHD
+  franchise: Steve McQueen
+  genres:
+  - Drama
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 127 Hours
+  type: Blu-ray
+  franchise: Danny Boyle
+  genres:
+  - Adventure
+  - Drama
+  - Survival
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 2 Guns
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Action
+  - Comedy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: A Star is Born
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Musical
+  - Romance
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Ad Astra
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Drama
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Aliens
+  type: Blu-ray
+  franchise: James Cameron
+  genres:
+  - Action
+  - Horror
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: American Psycho
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Horror
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Apollo 11
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Documentary
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Argo (Extended Cut)
+  type: Blu-ray
+  franchise: Ben Affleck
+  genres:
+  - Drama
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Arrival
+  type: 4K UHD
+  franchise: Denis Villeneuve
+  genres:
+  - Drama
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Australia
+  type: Blu-ray
+  franchise: Baz Luhrmann
+  genres:
+  - Drama
+  - Romance
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Avatar: The Way of Water'
+  type: 4K UHD
+  franchise: James Cameron
+  genres:
+  - Action
+  - Adventure
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Band of Brothers
+  type: Blu-ray
+  franchise: Steven Spielberg
+  genres:
+  - Drama
+  - War
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: TV Miniseries
+- name: 'Batman v Superman: Dawn of Justice (Ultimate Edition)'
+  type: 4K UHD
+  franchise: Zack Snyder
+  genres:
+  - Action
+  - Comic Book
+  - DCEU
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: true
+  slipcase: false
+  duplicate: false
+  notes: IMAX cut
+- name: 'Battle: Los Angeles'
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Action
+  - Sci-Fi
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Blade Runner
+  type: Blu-ray
+  franchise: Ridley Scott
+  genres:
+  - Drama
+  - Neo-Noir
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Blade Runner 2049
+  type: 4K UHD
+  franchise: Denis Villeneuve
+  genres:
+  - Drama
+  - Neo-Noir
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Bohemian Rhapsody
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Biographical
+  - Drama
+  - Musical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Braveheart
+  type: 4K UHD
+  franchise: Mel Gibson
+  genres:
+  - Drama
+  - Historical
+  - War
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Casino Royale
+  type: 4K UHD
+  franchise: Bond
+  genres:
+  - Action
+  - Spy
+  - Thriller
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Deadpool 2 (Super Duper Cut)
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Action
+  - Comedy
+  - Comic Book
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Defiance
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Historical
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Daniel Craig
+- name: Del Toro's Pinocchio
+  type: 4K UHD
+  franchise: Guillermo del Toro
+  genres:
+  - Animation
+  - Drama
+  - Fantasy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Dune
+  type: 4K UHD
+  franchise: Denis Villeneuve
+  genres:
+  - Drama
+  - Epic
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: true
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Dune Part Two
+  type: 4K UHD
+  franchise: Denis Villeneuve
+  genres:
+  - Drama
+  - Epic
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: true
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Dunkirk
+  type: 4K UHD
+  franchise: Christopher Nolan
+  genres:
+  - Drama
+  - Historical
+  - War
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Evil Dead
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Horror
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Exodus: Gods and Kings'
+  type: 4K UHD
+  franchise: Ridley Scott
+  genres:
+  - Drama
+  - Epic
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Fifty Shades (Trilogy)
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Romance
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: First Man
+  type: 4K UHD
+  franchise: Damien Chazelle
+  genres:
+  - Drama
+  - Historical
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Frozen
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Animation
+  - Family
+  - Musical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Gladiator
+  type: 4K UHD
+  franchise: Ridley Scott
+  genres:
+  - Action
+  - Drama
+  - Epic
+  - Historical
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Godzilla vs. Kong
+  type: 4K UHD
+  franchise: Godzilla / Kong
+  genres:
+  - Action
+  - Kaiju
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Gone Girl
+  type: 4K UHD
+  franchise: David Fincher
+  genres:
+  - Drama
+  - Mystery
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Gravity
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Sci-Fi
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Hacksaw Ridge
+  type: 4K UHD
+  franchise: Mel Gibson
+  genres:
+  - Drama
+  - Historical
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Hachi: A Dog''s Tale'
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Family
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Immortals
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Action
+  - Epic
+  - Fantasy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Inception
+  type: 4K UHD
+  franchise: Christopher Nolan
+  genres:
+  - Action
+  - Sci-Fi
+  - Thriller
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Inglourious Basterds
+  type: 4K UHD
+  franchise: Quentin Tarantino
+  genres:
+  - Drama
+  - War
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Interstellar
+  type: 4K UHD
+  franchise: Christopher Nolan
+  genres:
+  - Drama
+  - Epic
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Invictus
+  type: Blu-ray
+  franchise: Clint Eastwood
+  genres:
+  - Drama
+  - Historical
+  - Sport
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: It's a Wonderful Life
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Christmas
+  - Classics
+  - Drama
+  - Romance
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Jackie Brown
+  type: Blu-ray
+  franchise: Quentin Tarantino
+  genres:
+  - Comedy
+  - Crime
+  - Drama
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: John Wick
+  type: 4K UHD
+  franchise: John Wick
+  genres:
+  - Action
+  - Thriller
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Kill Bill Vol. 1 & 2
+  type: Blu-ray
+  franchise: Quentin Tarantino
+  genres:
+  - Action
+  - Crime
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: La Vie En Rose
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Biographical
+  - Drama
+  - Musical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Law Abiding Citizen
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Lawrence of Arabia
+  type: Blu-ray
+  franchise: David Lean
+  genres:
+  - Drama
+  - Epic
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Studiocanal
+- name: Legend
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Crime
+  - Drama
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Tom Hardy
+- name: 'Legend of the Guardians: Owls of Ga''hoole'
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Animation
+  - Adventure
+  - Family
+  - Fantasy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Les Misérables
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Musical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Live Die Repeat: Edge of Tomorrow'
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Action
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Logan
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Drama
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Love Never Die
+  type: Blu-ray
+  franchise: Andrew Lloyd Webber
+  genres:
+  - Musical
+  - Romance
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Malcolm X
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Biographical
+  - Drama
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Maleficent
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Family
+  - Fantasy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Man from UNCLE
+  type: Blu-ray
+  franchise: Guy Ritchie
+  genres:
+  - Action
+  - Comedy
+  - Spy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: true
+  duplicate: false
+  notes: Henry Cavill – Limited Edition
+- name: 'Mandela: Long Walk to Freedom'
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Biographical
+  - Drama
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Mary Poppins Returns
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Family
+  - Fantasy
+  - Musical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Midway
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Action
+  - Historical
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Milk
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Biographical
+  - Drama
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Miss Saigon
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Musical
+  - Romance
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Mission Impossible: Fallout'
+  type: 4K UHD
+  franchise: Mission Impossible
+  genres:
+  - Action
+  - Thriller
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Moon
+  type: Blu-ray
+  franchise: Duncan Jones
+  genres:
+  - Drama
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Nightcrawler
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Jake Gyllenhaal
+- name: No Time to Die
+  type: 4K UHD
+  franchise: Bond
+  genres:
+  - Action
+  - Spy
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Now You See Me
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Action
+  - Mystery
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Pacific Rim
+  type: Blu-ray
+  franchise: Guillermo del Toro
+  genres:
+  - Action
+  - Kaiju
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Planet Earth II
+  type: 4K UHD
+  franchise: David Attenborough
+  genres:
+  - Documentary
+  - Nature
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Predestination
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Sci-Fi
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Quantum of Solace
+  type: 4K UHD
+  franchise: Bond
+  genres:
+  - Action
+  - Spy
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Rambo (Series)
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Action
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Robin Hood
+  type: Blu-ray
+  franchise: Ridley Scott
+  genres:
+  - Action
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Rogue One: A Star Wars Story'
+  type: 4K UHD
+  franchise: Star Wars
+  genres:
+  - Action
+  - Adventure
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Rush
+  type: Blu-ray
+  franchise: Ron Howard
+  genres:
+  - Drama
+  - Sport
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Salt
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Action
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Schindler's List
+  type: 4K UHD
+  franchise: Steven Spielberg
+  genres:
+  - Drama
+  - Historical
+  - War
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Serenity
+  type: Blu-ray
+  franchise: Joss Whedon
+  genres:
+  - Action
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Sherlock Holmes
+  type: Blu-ray
+  franchise: Guy Ritchie
+  genres:
+  - Action
+  - Mystery
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Sicario
+  type: 4K UHD
+  franchise: Denis Villeneuve
+  genres:
+  - Crime
+  - Drama
+  - Thriller
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Sicario: Day of the Soldado'
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Crime
+  - Drama
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Skyfall
+  type: 4K UHD
+  franchise: Bond
+  genres:
+  - Action
+  - Spy
+  - Thriller
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Skyscraper
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Action
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Source Code
+  type: Blu-ray
+  franchise: Duncan Jones
+  genres:
+  - Sci-Fi
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Spears & Munsil UHD HDR Benchmark
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Benchmark
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Calibration disc, 1st Edition
+- name: Spectre
+  type: 4K UHD
+  franchise: Bond
+  genres:
+  - Action
+  - Spy
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Suicide Squad
+  type: 4K UHD
+  franchise: DCEU
+  genres:
+  - Action
+  - Comic Book
+  - DCEU
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Taxi Driver
+  type: 4K UHD
+  franchise: Martin Scorsese
+  genres:
+  - Crime
+  - Drama
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Studiocanal
+- name: TeneT
+  type: 4K UHD
+  franchise: Christopher Nolan
+  genres:
+  - Action
+  - Sci-Fi
+  - Thriller
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: The Abyss
+  type: 4K UHD
+  franchise: James Cameron
+  genres:
+  - Adventure
+  - Sci-Fi
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: The Bourne Series
+  type: 4K UHD
+  franchise: The Bourne Series
+  genres:
+  - Action
+  - Thriller
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Identity, Supremacy, Ultimatum, Legacy
+- name: The Fifth Element
+  type: 4K UHD
+  franchise: Luc Besson
+  genres:
+  - Action
+  - Comedy
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: The Greatest Showman
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Drama
+  - Musical
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: The Guernsey Literary & Potato Peel Pie Society
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Romance
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: The Hurt Locker
+  type: Blu-ray
+  franchise: Kathryn Bigelow
+  genres:
+  - Drama
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: The King's Speech
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Historical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: The Matrix (4-Film Collection)
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Action
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: The Professional (Léon)
+  type: 4K UHD
+  franchise: Luc Besson
+  genres:
+  - Action
+  - Crime
+  - Drama
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: THX 1138
+  type: Blu-ray
+  franchise: George Lucas
+  genres:
+  - Dystopian
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Tinker Tailor Soldier Spy
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Spy
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Top Gun & Top Gun: Maverick'
+  type: 4K UHD
+  franchise: ''
+  genres:
+  - Action
+  - Drama
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Tracks
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Adventure
+  - Drama
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Trainspotting
+  type: Blu-ray
+  franchise: Danny Boyle
+  genres:
+  - Crime
+  - Drama
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Transformers (Series)
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Action
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: True Grit
+  type: 4K UHD
+  franchise: Coen Brothers
+  genres:
+  - Drama
+  - Western
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: True Lies
+  type: 4K UHD
+  franchise: James Cameron
+  genres:
+  - Action
+  - Comedy
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Vice
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Biographical
+  - Comedy
+  - Drama
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Warrior
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Sport
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Whiplash
+  type: 4K UHD
+  franchise: Damien Chazelle
+  genres:
+  - Drama
+  - Music
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'X-Men: First Class'
+  type: Blu-ray
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Zero Dark Thirty
+  type: Blu-ray
+  franchise: Kathryn Bigelow
+  genres:
+  - Drama
+  - Historical
+  - Thriller
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Zodiac
+  type: Blu-ray
+  franchise: David Fincher
+  genres:
+  - Crime
+  - Drama
+  - Mystery
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Zulu
+  type: Blu-ray
+  franchise: ''
+  genres:
+  - Drama
+  - Historical
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Star Wars: A New Hope'
+  type: 4K UHD
+  franchise: Star Wars
+  genres:
+  - Action
+  - Adventure
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Episode IV
+- name: 'Star Wars: The Empire Strikes Back'
+  type: 4K UHD
+  franchise: Star Wars
+  genres:
+  - Action
+  - Adventure
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Episode V
+- name: 'Star Wars: Return of the Jedi'
+  type: 4K UHD
+  franchise: Star Wars
+  genres:
+  - Action
+  - Adventure
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Episode VI
+- name: 'Star Wars: The Force Awakens'
+  type: 4K UHD
+  franchise: Star Wars
+  genres:
+  - Action
+  - Adventure
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Episode VII
+- name: 'Star Wars: The Last Jedi'
+  type: 4K UHD
+  franchise: Star Wars
+  genres:
+  - Action
+  - Adventure
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Episode VIII
+- name: 'Star Wars: The Rise of Skywalker'
+  type: 4K UHD
+  franchise: Star Wars
+  genres:
+  - Action
+  - Adventure
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Episode IX
+- name: Iron Man
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comedy
+  - Comic Book
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #01'
+- name: The Incredible Hulk
+  type: Blu-ray
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #02'
+- name: Thor
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Fantasy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #04'
+- name: The Avengers
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #06'
+- name: 'Thor: The Dark World'
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Fantasy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #08'
+- name: Ant-Man
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comedy
+  - Comic Book
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #12'
+- name: 'Captain America: Civil War'
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Drama
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #13'
+- name: Doctor Strange
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Fantasy
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #14'
+- name: Guardians of the Galaxy Vol. 2
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comedy
+  - Comic Book
+  - Sci-Fi
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #15'
+- name: 'Spider-Man: Homecoming'
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comedy
+  - Comic Book
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #16'
+- name: 'Thor: Ragnarok'
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comedy
+  - Comic Book
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #17'
+- name: Black Panther
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Drama
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #18'
+- name: 'Avengers: Infinity War'
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Drama
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #19'
+- name: Ant-Man and the Wasp
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comedy
+  - Comic Book
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #20'
+- name: 'Avengers: Endgame'
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Drama
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #22'
+- name: Eternals
+  type: 4K UHD
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Drama
+  - Sci-Fi
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: 'MCU #26'
+- name: Wolverine Unleashed
+  type: Blu-ray
+  franchise: Marvel
+  genres:
+  - Action
+  - Comic Book
+  - Drama
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Star Wars Battlefront II
+  type: Xbox One
+  franchise: Star Wars
+  genres:
+  - Action
+  - Shooter
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Bioshock (Collection)
+  type: Xbox One
+  franchise: ''
+  genres:
+  - FPS
+  - Horror
+  - Shooter
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Call of Duty: Modern Warfare Remastered'
+  type: Xbox One
+  franchise: Call of Duty
+  genres:
+  - FPS
+  - Shooter
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Call of Duty: Black Ops III'
+  type: Xbox One
+  franchise: Call of Duty
+  genres:
+  - FPS
+  - Shooter
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Call of Duty: Ghosts'
+  type: Xbox One
+  franchise: Call of Duty
+  genres:
+  - FPS
+  - Shooter
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Battlefield 4
+  type: Xbox One
+  franchise: Battlefield
+  genres:
+  - FPS
+  - Shooter
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Gears 5
+  type: Xbox One
+  franchise: Gears of War
+  genres:
+  - Action
+  - Shooter
+  - TPS
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Gears of War 4
+  type: Xbox One
+  franchise: Gears of War
+  genres:
+  - Action
+  - Shooter
+  - TPS
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Halo 5: Guardians'
+  type: Xbox One
+  franchise: Halo
+  genres:
+  - FPS
+  - Sci-Fi
+  - Shooter
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Halo: The Master Chief Collection'
+  type: Xbox One
+  franchise: Halo
+  genres:
+  - FPS
+  - Sci-Fi
+  - Shooter
+  condition: Excellent
+  watched: More than Once
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: Halo 1–4
+- name: Titanfall
+  type: Xbox One
+  franchise: ''
+  genres:
+  - Action
+  - FPS
+  - Sci-Fi
+  - Shooter
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Battlefield: Bad Company 2'
+  type: Xbox 360
+  franchise: Battlefield
+  genres:
+  - FPS
+  - Shooter
+  - War
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Burnout Paradise
+  type: Xbox 360
+  franchise: ''
+  genres:
+  - Racing
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: Rainbow Six Vegas
+  type: Xbox 360
+  franchise: Rainbow Six
+  genres:
+  - FPS
+  - Shooter
+  - Tactical
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
+- name: 'Splinter Cell: Conviction'
+  type: Xbox 360
+  franchise: Splinter Cell
+  genres:
+  - Action
+  - Stealth
+  - Thriller
+  condition: Excellent
+  watched: 'Yes'
+  keepSell: Keep
+  steelbook: false
+  slipcase: false
+  duplicate: false
+  notes: ''
